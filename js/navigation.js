@@ -33,13 +33,25 @@
       return false;
     }
     
-  var Town/Cityfield = document.forms["PersonalDetailsForm"]["townInput"].value;
-    if (Town/Cityfield == null || Town/Cityfield == "") {
+  var town = document.forms["PersonalDetailsForm"]["townInput"].value;
+    if (town == null || town == "") {
       alert("Town/City must be filled out") ;
       return false;
     }
 
+     var emailfield = document.forms["PersonalDetailsForm"]["emailInput"].value;
+    if (emailfield == null || emailfield == "") {
+      alert("email must be filled out") ;
+      return false;
+    }
 
+      var claimsfield = document.getElementById("claims");
+      if(claimsfield.selectedIndex== 0) {
+      alert("no claims bonus field must be filled out") ;
+            return false;
+    }
+
+   
       $('#dvPersonalDetails').hide();
       $('#dvQuoteDetails').hide();
       $('#dvCarDetails').show();
@@ -47,9 +59,12 @@
     // Hide the quote section (dvQuoteDetails)
     // Show the car details section (dvCarDetails)
 
+
   }
 
   function showPersonalDetails() {
+  
+
      $('#dvCarDetails').hide();
      $('#dvQuoteDetails').hide();
      $('#dvPersonalDetails').show();
@@ -61,6 +76,42 @@
   }
 
   function showQuoteDetails() {
+       var manufacturerfield = document.getElementById("manufacturer");
+      if(manufacturerfield.selectedIndex== 0) {
+      alert("manufacturer must be filled out") ;
+            return false;
+    
+     }
+     var model = document.forms["CarDetailsForm"]["ModelInput"].value;
+    if (model == null || model == "") {
+      alert("model must be filled out") ;
+      return false;
+    }
+     var CarAge = document.forms["CarDetailsForm"]["CarAgeInput"].value;
+    if (CarAge == null || CarAge == "") {
+      alert("car age must be filled out") ;
+      return false;
+    }
+
+    var EngineSize = document.forms["CarDetailsForm"]["EngineSizeInput"].value;
+    if (EngineSize == null || EngineSize == "") {
+      alert("engine size must be filled out") ;
+      return false;
+    }
+
+    var storagefield = document.getElementById("storage");
+      if(storagefield.selectedIndex== 0) {
+      alert("storage field must be filled out") ;
+            return false;
+    
+     }
+
+     var EstimatedValue = document.forms["CarDetailsForm"]["EstimatedValueInput"].value;
+    if (EstimatedValue == null || EstimatedValue == "") {
+      alert("estimated value must be filled out") ;
+      return false;
+    }
+
     $('#dvCarDetails').hide();
      $('#dvPersonalDetails').hide();
       $('#dvQuoteDetails').show();

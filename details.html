@@ -82,7 +82,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="EmailAddressInput" class="control-label col-md-2">Email Address</label>
+              <label for="emailInput" class="control-label col-md-2">Email Address</label>
               <div class="col-md-4">
                 <input id="txtemail" type="email" name="emailInput" class="form-control personalDetails" placeholder="Your Email Address" />
               </div>
@@ -90,8 +90,8 @@
             <div class="form-group">
               <label for="ClaimsBonusInput" class="control-label col-md-2">No Claims Bonus(in years)</label>
                 <div class="col-md-4">
-                  <select class="form-control personalDetails">
-                    <option value="select">Select</option>
+                  <select id="claims" class="form-control personalDetails">
+                    <option selected disabled >select</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -123,12 +123,12 @@
         <p>In order to provide you with a quote, we need a few details. Please complete the form below. Thanks.</p>
 
         <div class="row">
-          <form class="form-horizontal">
+          <form class="form-horizontal" name="CarDetailsForm">
           <div class="form-group">
             <label for="ManufacturerInput" class="control-label col-md-2">Manufacturer</label>
             <div class="col-md-4">
-              <select class="form-control personalDetails">
-                <option value="select">Select</option>
+              <select id="manufacturer" class="form-control personalDetails">
+                <option  selected disabled >Select</option>
                 <option value="Audi">Audi</option>
                 <option value="BMW">BMW</option>
                 <option value="Citroen">Citroen</option>
@@ -161,8 +161,8 @@
           <div class="form-group">
             <label for="StorageInput" class="control-label col-md-2">Storage</label>
             <div class="col-md-4">      
-           <select class="form-control personalDetails">
-            <option value="select">Select</option>
+           <select id="storage" class="form-control personalDetails">
+            <option selected diabled >Select</option>
                 <option value="Garage">Garage</option>
                 <option value="Driveway">Driveway</option>
                 <option value="Cul-de-sac">Cul-de-sac</option>
@@ -174,7 +174,7 @@
             <label for="EstimatedValueInput" class="control-label col-md-2">Estimated Value</label>
             <div class="col-md-4">
 
-              <input id="txtEstimatedValue" type="text" name="EstimnatedValueInput" class="form-control personalDetails" placeholder="Model Value" required/>
+              <input id="txtEstimatedValue" type="text" name="EstimatedValueInput" class="form-control personalDetails" placeholder="Model Value" required/>
             </div>
           </div>
           <div class="form-group">
@@ -195,7 +195,25 @@
          </div>
       </div>
       <!-- WRAP Quote DETAILS FORM IN CHILD PANEL -->
-      <div id="dvQuoteDetails" class="dvQuoteDetails">
+      <div id="dvQuoteDetails" class="dvQuoteDetails" >
+        <h1> Retrieve Quote</h1>
+         <div class="form-group">
+              <label for="QuoteInput" class="control-label col-md-2">Quote</label>
+              <div class="col-md-4">
+                <input id="txtQuote" type="text" name="QuoteInput" class="form-control personalDetails" placeholder="Your Quote" />
+              </div>
+               <br><br><p>Here is the insurance quote we can offer you.</p>
+            </div>
+           
+           
+         <div class="form-group">
+              <div class="col-md-4">
+               <input id="btnBack" value="Back" class="btn btn-default btn-sm btn-success" onclick="showCarDetails()" />
+              </div>
+            </div> 
+            
+
+
         <!-- The display fields for the quote will be added here -->
       </div>
 
